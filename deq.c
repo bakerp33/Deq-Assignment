@@ -227,7 +227,7 @@ int vDeqFree(VoidDeq* vDeqPtr, int freeDatas)
     {
         free(vDeqPtr);
     }
-    else if (freeDatas == 1)
+    /*else if (freeDatas == 1)
     {
         while (vDeqPtr->headPtr != NULL)
         {
@@ -240,7 +240,7 @@ int vDeqFree(VoidDeq* vDeqPtr, int freeDatas)
             }
         }
         free(vDeqPtr);
-    }
+    } */
 
     return SUCCESS;
 }

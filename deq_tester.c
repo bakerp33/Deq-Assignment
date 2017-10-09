@@ -373,7 +373,7 @@ int test_vDeqPeekHead() {
 
 	// peek that item
 	dataPtr = NULL;
-	rVal = vDeqPeekHead(vDeqPtr, dataPtrPtr);
+	rVal = vDeqPeekHead(vDeqPtr, dataPtrPtr);	
 	if ((*dataPtrPtr) != (&thing1)) { printf("  'dataPtrPtr' should be %d after pushing %d\n", thing1, thing1); return FAIL; }
 	if (rVal != SUCCESS) { printf("  failed: did not return SUCCESS: %d\n", rVal); return FAIL; }
 
@@ -383,9 +383,9 @@ int test_vDeqPeekHead() {
 	rVal = vDeqPushHead(vDeqPtr, (&thing2));
 	if (rVal != SUCCESS) { printf("  initialize 3 (vDeqPushHead) failed: %d\n", rVal); return FAIL; }
 
-	// peek the second item
+	// peek the second item	
 	dataPtr = NULL;
-	rVal = vDeqPeekHead(vDeqPtr, dataPtrPtr);
+	rVal = vDeqPeekHead(vDeqPtr, dataPtrPtr);	
 	if ((*dataPtrPtr) != (&thing2)) { printf("  'dataPtrPtr' should be %d after pushing %d\n", thing2, thing2); return FAIL; }
 	if (rVal != SUCCESS) { printf("  failed: did not return SUCCESS: %d\n", rVal); return FAIL; }
 	else /* (rVal == SUCCESS) */ { printf("  succeeded\n"); return WIN; }
@@ -426,7 +426,7 @@ int test_vDeqPeekTail() {
 
 	// peek that item
 	dataPtr = NULL;
-	rVal = vDeqPeekTail(vDeqPtr, dataPtrPtr);
+	rVal = vDeqPeekTail(vDeqPtr, dataPtrPtr);	
 	if ((*dataPtrPtr) != (&thing1)) { printf("  'dataPtrPtr' should be %d after pushing %d\n", thing1, thing1); return FAIL; }
 	if (rVal != SUCCESS) { printf("  failed: did not return SUCCESS: %d\n", rVal); return FAIL; }
 
@@ -436,9 +436,9 @@ int test_vDeqPeekTail() {
 	rVal = vDeqPushTail(vDeqPtr, (&thing2));
 	if (rVal != SUCCESS) { printf("  initialize 3 (vDeqPushTail) failed: %d\n", rVal); return FAIL; }
 
-	// peek the second item
+	// peek the second item	
 	dataPtr = NULL;
-	rVal = vDeqPeekTail(vDeqPtr, dataPtrPtr);
+	rVal = vDeqPeekTail(vDeqPtr, dataPtrPtr);	
 	if ((*dataPtrPtr) != (&thing2)) { printf("  'dataPtrPtr' should be %d after pushing %d\n", thing2, thing2); return FAIL; }
 	if (rVal != SUCCESS) { printf("  failed: did not return SUCCESS: %d\n", rVal); return FAIL; }
 	else /* (rVal == SUCCESS) */ { printf("  succeeded\n"); return WIN; }
@@ -451,8 +451,8 @@ int test_vDeqFree() {
 
 	// test for NULL_PARAM check
 	int rVal = vDeqFree(NULL, 0);
-	if (rVal != NULL_PARAM) { printf("  failed: should make sure 'vDeqPtr' is not NULL [likely segfaulted]\n"); return FAIL; }
-
+	if (rVal != NULL_PARAM) { printf("  failed: should make sure 'vDeqPtr' is not NULL [likely segfaulted]\n"); return FAIL; }	
+	
 	// test freeing empty deq + freeDatas
 	VoidDeq* vDeqPtr = NULL;
 	VoidDeq** vDeqPtrPtr = (&vDeqPtr);
